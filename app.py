@@ -16,7 +16,7 @@ st.write("Enter a message below and click **Predict** to know whether it's spam 
 message = st.text_area("Enter your email or message:")
 
 # Predict button
-proba = model.predict_proba(input_data)[0]
+proba = mnb.predict_proba(input_data)[0]
 st.write(f"Prediction Probabilities: {proba}")
 
 if st.button("Predict"):
