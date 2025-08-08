@@ -6,7 +6,7 @@ import sklearn
 # Load the saved model and vectorizer
 model = pickle.load(open("spam_classifier_model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
-model = MultinomialNB()
+
 # Streamlit UI
 st.set_page_config(page_title="Email Spam Classifier", layout="centered")
 st.title("📧 Email Spam Classifier")
@@ -16,8 +16,7 @@ st.write("Enter a message below and click **Predict** to know whether it's spam 
 message = st.text_area("Enter your email or message:")
 
 # Predict button
-proba = model.predict_proba(input_data)[0]
-st.write(f"Prediction Probabilities: {proba}")
+
 
 if st.button("Predict"):
     if message.strip() == "":
