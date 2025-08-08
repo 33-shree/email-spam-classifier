@@ -1,6 +1,7 @@
 
 import streamlit as st
 import pickle
+import sklearn
 
 # Load the saved model and vectorizer
 model = pickle.load(open("spam_classifier_model.pkl", "rb"))
