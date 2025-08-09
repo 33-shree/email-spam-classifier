@@ -24,6 +24,8 @@ if st.button("Predict"):
     else:
         # Transform and predict
         input_data = vectorizer.transform([message])
+        proba = model.predict_proba(input_data)[0] 
+        st.write(f"Prediction Probabilities: {proba}")
         result = model.predict(input_data)[0]
 
         if result == 1:
